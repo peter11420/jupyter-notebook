@@ -1,1 +1,1 @@
-jupyter-notebook
+docker-compose jupyter-notebook
