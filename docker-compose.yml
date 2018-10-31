@@ -1,0 +1,19 @@
+version: '3'
+services:
+  jupyter-tutorial:
+    image: peter11420/base-notebook
+    container_name: jupyter-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/home/jovyan/work/
+    command: start-notebook.sh --NotebookApp.token='' 
+    restart: always
+  db:
+    image: mysql:5.7
+    container_name: MySQL
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    restart: always
